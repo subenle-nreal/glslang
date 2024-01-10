@@ -293,7 +293,7 @@ else()
     endif()
     add_definitions(-DENABLE_OPT=0)
 endif()
-
+message(STATUS "SBL ENABLE_GLSLANG_BINARIES: ${ENABLE_GLSLANG_BINARIES}")
 add_subdirectory(glslang)
 if(ENABLE_GLSLANG_BINARIES)
     add_subdirectory(StandAlone)
@@ -304,7 +304,7 @@ add_subdirectory(SPIRV)
 #
 # Otherwise add_subdirectory users have a harder time consuming the library.
 # Since glslang will pollute the installation and add undesirable testing.
-if(PROJECT_IS_TOP_LEVEL)
+#if(PROJECT_IS_TOP_LEVEL)
     option(GLSLANG_TESTS "Enable glslang testing")
     if(GLSLANG_TESTS)
         enable_testing()
@@ -372,4 +372,4 @@ if(PROJECT_IS_TOP_LEVEL)
         DESTINATION
             "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
     )
-endif()
+#endif()

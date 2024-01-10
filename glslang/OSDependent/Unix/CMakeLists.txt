@@ -40,7 +40,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 target_link_libraries(OSDependent Threads::Threads)
 
-if(PROJECT_IS_TOP_LEVEL AND NOT BUILD_SHARED_LIBS)
+#if(PROJECT_IS_TOP_LEVEL AND NOT BUILD_SHARED_LIBS)
     install(TARGETS OSDependent EXPORT glslang-targets)
 
     # Backward compatibility
@@ -54,4 +54,4 @@ if(PROJECT_IS_TOP_LEVEL AND NOT BUILD_SHARED_LIBS)
         add_library(OSDependent ALIAS glslang::OSDependent)
     ")
     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OSDependentTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-endif()
+#endif()

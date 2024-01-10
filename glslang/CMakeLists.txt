@@ -227,7 +227,7 @@ endif()
 ################################################################################
 # install
 ################################################################################
-if(PROJECT_IS_TOP_LEVEL)
+#if(PROJECT_IS_TOP_LEVEL)
     install(TARGETS glslang EXPORT glslang-targets)
     if(NOT BUILD_SHARED_LIBS)
         install(TARGETS MachineIndependent EXPORT glslang-targets)
@@ -282,4 +282,4 @@ if(PROJECT_IS_TOP_LEVEL)
     ")
     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-default-resource-limitsTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 
-endif()
+#endif()

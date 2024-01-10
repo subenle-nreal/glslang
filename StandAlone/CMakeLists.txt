@@ -87,7 +87,7 @@ if(WIN32)
     source_group("Source" FILES ${SOURCES})
 endif()
 
-if(PROJECT_IS_TOP_LEVEL)
+#if(PROJECT_IS_TOP_LEVEL)
     install(TARGETS glslang-standalone EXPORT glslang-targets)
 
     # Backward compatibility
@@ -134,4 +134,4 @@ if(PROJECT_IS_TOP_LEVEL)
         install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
     endif()
 
-endif()
+#endif()
